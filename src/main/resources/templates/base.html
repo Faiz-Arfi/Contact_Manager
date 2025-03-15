@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en" th:fragment="parent(content, title)">
+<head>
+    <meta charset="UTF-8">
+    <title data-th-replace="${title}">Base</title>
+    <link th:href="@{/css/output.css}" rel="stylesheet">
+</head>
+<body>
+    <header >
+        <ul>
+            <li>
+                <a data-th-href="@{/home}">Home</a>
+            </li>
+            <li>
+                <a data-th-href="@{/about}">About</a>
+            </li>
+            <li>
+                <a data-th-href="@{/services}">Services</a>
+            </li>
+        </ul>
+    </header>
+    <p class="bg-amber-400">This is base</p>
+    <section data-th-replace="${content}"></section>
+    <footer>
+        <ul>
+            <li>copyright 2003</li>
+        </ul>
+    </footer>
+    <!-- npx @tailwindcss/cli -i src\main\resources\templates\src\input.css -o src\main\resources\templates\src\output.css --watch -->
+</body>
+</html>
