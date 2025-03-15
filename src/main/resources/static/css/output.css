@@ -554,10 +554,6 @@ video {
   display: none;
 }
 
-.w-0 {
-  width: 0px;
-}
-
 .border-4 {
   border-width: 4px;
 }
@@ -570,11 +566,6 @@ video {
 .bg-amber-400 {
   --tw-bg-opacity: 1;
   background-color: rgb(251 191 36 / var(--tw-bg-opacity, 1));
-}
-
-.text-xl {
-  font-size: 1.25rem;
-  line-height: 1.75rem;
 }
 
 .font-bold {
