@@ -4,21 +4,10 @@
     <meta charset="UTF-8">
     <title data-th-replace="${title}">Base</title>
     <link th:href="@{/css/output.css}" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
 </head>
-<body>
-    <header >
-        <ul>
-            <li>
-                <a data-th-href="@{/home}">Home</a>
-            </li>
-            <li>
-                <a data-th-href="@{/about}">About</a>
-            </li>
-            <li>
-                <a data-th-href="@{/services}">Services</a>
-            </li>
-        </ul>
-    </header>
+<body m-0 p-0>
+  <div data-th-replace="navbar"></div>
     <p class="bg-amber-400">This is base</p>
     <section data-th-replace="${content}"></section>
     <footer>
@@ -26,6 +15,6 @@
             <li>copyright 2003</li>
         </ul>
     </footer>
-    <!-- npx @tailwindcss/cli -i src\main\resources\templates\src\input.css -o src\main\resources\templates\src\output.css --watch -->
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
 </body>
 </html>
