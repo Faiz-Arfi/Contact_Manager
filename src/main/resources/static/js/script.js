@@ -1,7 +1,9 @@
 console.log('Script Loaded');
 
-// Initialize theme syste
-initThemeSystem();
+// Initialize theme system
+document.addEventListener('DOMContentLoaded', () => {
+    initThemeSystem();
+});// This makes sure that the script is loaded after the DOM is fully loaded
 
 function initThemeSystem() {
     const htmlElement = document.querySelector('html');
