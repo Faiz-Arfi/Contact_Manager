@@ -6,7 +6,7 @@
     <link th:href="@{/css/output.css}" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
 </head>
-<body m-0 p-0>
+<body class="bg-white text-black dark:bg-gray-700 dark:text-white">
   <div data-th-replace="~{navbar}"></div>
     <p class="bg-amber-400">This is base</p>
     <section data-th-replace="${content}"></section>
@@ -16,5 +16,6 @@
         </ul>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+    <script data-th-src="@{'/js/script.js'}"></script>
 </body>
 </html>
