@@ -6,11 +6,14 @@ import java.util.List;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import lombok.NoArgsConstructor;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -19,6 +22,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 public class User {
 
     @Id
@@ -38,6 +42,7 @@ public class User {
     private boolean phoneVerified = false;
 
     //SELF, GOOGLE, GITHUB
+    @Enumerated(value = EnumType.STRING)
     private Providers provider = Providers.SELF;
     private String providerUserId;
 
