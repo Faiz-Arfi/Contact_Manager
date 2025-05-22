@@ -4,9 +4,67 @@
     <title>Login</title>
 </head>
 <body>
-    <div id="content">
-        <h1>This is Login page</h1>
-        
+    <div id="content" class="mt-10">
+        <!-- form -->
+        <form 
+        data-th-action="@{/do-login}" 
+        method="post"
+        data-th-object="${userForm}"
+        novalidate>
+        <div class="bg-gray-100 dark:bg-gray-700 font-sans text-gray-500 dark:text-gray-300 flex flex-col items-center justify-center border border-gray-100 dark:border-none p-4 sm:p-6 mx-auto w-full max-w-[90%] xs:max-w-sm sm:max-w-md rounded-lg shadow-md my-2 sm:my-3">
+            <div data-th-replace="~{message::messagebox}"></div>
+                <div class="text-left text-2xl font-bold w-full">Login Here</div>
+                <br>
+                <!-- form Fields -->
+
+                <div class="text-left w-full">Username</div>
+                <input type="text" id="username" name="username" data-th-field="*{name}" required class="border rounded px-2 py-1 w-full text-black" />
+                <div class="text-left w-full">
+                    <p
+                    data-th-if="${#fields.hasErrors('name')}"
+                    data-th-errors="*{name}"
+                    class="text-red-400 py-1" 
+                    ></p>
+                </div>
+                <div class="text-left w-full">Email</div>
+                <input type="email" id="email" name="email" required data-th-field="*{email}" class="border rounded px-2 py-1 w-full text-black" />
+                <div class="text-left w-full">
+                    <p
+                    data-th-if="${#fields.hasErrors('email')}"
+                    data-th-errors="*{email}"
+                    class="text-red-400 py-1"
+                    ></p>
+                </div>
+                <div class="text-left w-full">Password</div>
+                <input type="password" id="password" name="password" required data-th-field="*{password}" class="border rounded px-2 py-1 w-full text-black" />
+                <div class="text-left w-full">
+                    <p
+                    data-th-if="${#fields.hasErrors('password')}"
+                    data-th-errors="*{password}"
+                    class="text-red-400 py-1"
+                    ></p>
+                </div>
+
+                <!-- reset and Login button -->
+                <div class="flex gap-2 w-full mt-1">
+                    <button type="reset" id="reset-button" class="bg-red-700 hover:bg-red-800 text-white px-4 py-2 rounded w-full my-2">Reset</button>
+                    <button type="submit" id="login" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded w-full my-2">Login</button>
+                </div>
+                <div class="relative w-full text-center my-1">
+                <hr class="absolute top-1/2 w-full border-gray-400" />
+                <span class="inline-block relative px-1 bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-200">OR</span>
+                </div>
+                <br />
+
+                <!-- login with google and github button -->
+                <button class="bg-slate-300 dark:bg-slate-500 hover:bg-slate-400 dark:hover:bg-slate-600 border dark:border-none px-4 py-2 rounded w-full flex items-center justify-center gap-2">
+                    <img src="/images/google-icon-logo-svgrepo-com.svg" alt="Google logo" class="w-6 h-6">
+                    <span>Login with Google</span>
+                </button>
+                <br />
+                <button class="bg-slate-300 dark:bg-slate-500 hover:bg-slate-400 dark:hover:bg-slate-600 border dark:border-none px-4 py-2 rounded w-full flex items-center justify-center gap-2"><img src="/images/github-142-svgrepo-com.svg" alt="GitHub logo" class="w-6 h-6">Login with Github</button>
+            </div>
+        </form>
     </div>
 </body>
 </html>
